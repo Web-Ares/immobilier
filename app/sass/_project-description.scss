@@ -1,0 +1,154 @@
+.project-description {
+  overflow: hidden;
+  position: relative;
+  padding: 60px 0;
+  background: #f0f0f8;
+}
+.project-description__layout {
+  position: relative;
+  padding: 0 15px;
+  max-width: 1530px;
+  margin: 0 auto;
+}
+.project-description__inner {
+
+}
+.project-description__video {
+  display: block;
+  position: relative;
+  height: 200px;
+  margin: 0 0 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &:hover {
+
+    .project-description__video-play {
+      border-color: #df2c2c;
+
+      &:after {
+        border-color: transparent transparent transparent#df2c2c;
+      }
+
+    }
+
+  }
+
+}
+.project-description__video-play {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  background: rgba(0,0,0,0.7);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  box-shadow: 0 5px 10px 2px rgba(0,0,0,0.2);
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 17px;
+    border-color: transparent transparent transparent #fcfcfc;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    content: '';
+    -webkit-transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease;
+  }
+
+}
+.project-description__text {
+
+  p {
+    margin: 0 0 20px;
+  }
+  strong {
+    @include main-font3();
+  }
+
+}
+
+@media (min-width: $desktop) {
+
+  .project-description {
+    padding: 90px 0;
+
+    .site__title {
+      margin: 0 0 63px;
+    }
+
+  }
+  .project-description__layout {
+    padding: 0 35px;
+  }
+  .project-description__inner {
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+
+    >div {
+      width: 39.8%;
+      padding: 0 0 0 20px;
+
+      &:first-child {
+        width: 50%;
+        padding: 0 20px 0 0;
+      }
+
+    }
+
+  }
+  .project-description__video {
+    margin-top: 6px;
+    height: 400px;
+  }
+  .project-description__video-play {
+    width: 80px;
+    height: 80px;
+    border: 9px solid #fff;
+
+    &:after {
+      left: 56%;
+      border-width: 13px 0 13px 18px;
+    }
+
+  }
+  .project-description__text {
+
+    p {
+
+      &:first-child {
+
+        +p {
+          margin: 0 0 33px;
+          font-size: 18px;
+          line-height: 26px;
+        }
+
+      }
+
+    }
+
+
+  }
+
+}
+@media (min-width: $desktop-wide) {
+
+
+
+}
+

@@ -1,0 +1,59 @@
+.logo {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 15px;
+  width: 50px;
+  height: 51px;
+  -webkit-transform: translateY(-50%) translateZ(0);
+  transform: translateY(-50%) translateZ(0);
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  >span {
+    display: none;
+  }
+
+  >img,
+  >svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .logo__svg-mob {
+    display: none;
+  }
+}
+.logo_2 {
+  width: 140px;
+  height: 46px;
+}
+
+@media (min-width: $desktop) {
+  .logo {
+    z-index: 7;
+    width: 71px;
+    height: 70px;
+    left: 35px;
+
+    >span {
+      display: block;
+      margin: 10px 0 0;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 12px;
+      color: #ffffff;
+      @include main-font7();
+      letter-spacing: 6px;
+    }
+
+  }
+  .logo_2 {
+    width: 214px;
+    height: 67px;
+  }
+}
+
+

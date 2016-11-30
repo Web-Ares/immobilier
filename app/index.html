@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <title>Title</title>
+
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+            background: rgba(0,0,0,1);
+        }
+        .preloader > .logo {
+            position: absolute;
+            left: 50%;
+            top: 40% !important;
+            max-width: 354px;
+            z-index: 3;
+            -webkit-transition: opacity 500ms ease-in-out;
+            transition: opacity 500ms ease-in-out;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .preloader_loaded > .logo,
+        .preloader_loaded > div{
+            opacity: 0;
+        }
+        .preloader__points {
+            overflow: hidden;
+            position: absolute;
+            top: 65%;
+            left: 0;
+            width: 100%;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            text-align: center;
+        }
+
+        .preloader__points span {
+            display: inline-block;
+            vertical-align: top;
+            height: 10px;
+            margin: 60px auto;
+            width: 10px;
+            background: #610717;
+            border-radius: 10px;
+            -webkit-animation: loading 0.6s infinite alternate 0s;
+            animation: loading 0.6s infinite alternate 0s;
+        }
+
+        .preloader__points span:nth-of-type(1) {
+            -webkit-animation-delay: 0s;
+        }
+        .preloader__points span:nth-of-type(2) {
+            -webkit-animation-delay: 0.2s;
+            background: #c40923;
+        }
+        .preloader__points span:nth-of-type(3) {
+            -webkit-animation-delay: 0.4s;
+            background: #a60922;
+        }
+        .preloader__points span:nth-of-type(4) {
+            -webkit-animation-delay: 0.6s;
+            background: #8c091f;
+        }
+        .preloader__points span:nth-of-type(5) {
+            -webkit-animation-delay: 0.8s;
+            background: #610717;
+        }
+
+        @-webkit-keyframes loading {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes loading {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+    <!-- site -->
+    <div class="site site_index">
+
+        <!-- preloader -->
+        <div class="preloader">
+            <div class='preloader__points'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo" style="
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjEuMSA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjEuMSA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOm5vbmU7c3Ryb2tlOiNERDAwMkY7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO30uc3Qxe2ZpbGw6I0UwMkQyRDt9PC9zdHlsZT48bGluZSBpZD0iWE1MSURfMjNfIiBjbGFzcz0ic3QwIiB4MT0iMzAuNiIgeTE9IjMwIiB4Mj0iMzAuNiIgeTI9IjMwIi8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTIzLjIsMEMxNC41LDEuNSwwLDYsMCwxMnY0Mi4zYzAsMy4xLDEuNyw1LjQsNS43LDUuNGgxOC4yYy0wLjEtOC45LDAuMS0xNy4zLDAtMjYuMWM2LjUsNy42LDEyLjMsMTcuNSwxOC4zLDI2LjRoOS4zYzEwLjgsMCw5LjYtNyw5LjYtN2MwLTEzLjUsMC0yNy4zLDAtNDAuOGMwLTYtMTEtMTAuNy0xOS4xLTExLjRDNDIsOS4zLDQyLDE4LjMsNDIsMjYuMkMzOC45LDIwLjYsMzEsOC45LDIzLjgsMC4zQzIzLjgsMC4yLDIzLjQsMCwyMy4yLDB6IE02LjQsNTcuMmMtMy4xLDAtMy43LTItMy43LTQuNVYxMi40YzAtMy45LDkuMy03LjksMTguNy05LjljMCw0LjUtMC4yLDM2LjUsMCw1NC43QzE2LjEsNTcuMiwxMS43LDU3LjIsNi40LDU3LjJ6Ii8+PC9zdmc+);
+            "></div>
+        </div>
+        <!-- /preloader -->
+
+        <!-- site__header -->
+        <header class="site__header">
+
+            <!-- site__header-layout -->
+            <div class="site__header-layout">
+
+                <!-- logo -->
+                <h1 class="logo">
+
+
+                    <svg version="1.1" class="logo__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 61.1 60" style="enable-background:new 0 0 61.1 60;" xml:space="preserve">
+
+                    <line stroke="#FFFFFF" class="st0" x1="30.6" y1="30" x2="30.6" y2="30"/>
+                    <path class="st1" fill="#FFFFFF" d="M23.2,0C14.5,1.5,0,6,0,12v42.3c0,3.1,1.7,5.4,5.7,5.4h18.2c-0.1-8.9,0.1-17.3,0-26.1
+                        c6.5,7.6,12.3,17.5,18.3,26.4h9.3c10.8,0,9.6-7,9.6-7c0-13.5,0-27.3,0-40.8c0-6-11-10.7-19.1-11.4C42,9.3,42,18.3,42,26.2
+                        C38.9,20.6,31,8.9,23.8,0.3C23.8,0.2,23.4,0,23.2,0z M6.4,57.2c-3.1,0-3.7-2-3.7-4.5V12.4c0-3.9,9.3-7.9,18.7-9.9
+                        c0,4.5-0.2,36.5,0,54.7C16.1,57.2,11.7,57.2,6.4,57.2z"/>
+                    </svg>
+
+                    <svg version="1.1" class="logo__svg-mob" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 61.1 60" style="enable-background:new 0 0 61.1 60;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;}
+                    </style>
+                    <line id="XMLID_23_" stroke="#DD002F" class="st0" x1="30.6" y1="30" x2="30.6" y2="30"/>
+                    <path class="st1" fill="#E02D2D" d="M23.2,0C14.5,1.5,0,6,0,12v42.3c0,3.1,1.7,5.4,5.7,5.4h18.2c-0.1-8.9,0.1-17.3,0-26.1
+                        c6.5,7.6,12.3,17.5,18.3,26.4h9.3c10.8,0,9.6-7,9.6-7c0-13.5,0-27.3,0-40.8c0-6-11-10.7-19.1-11.4C42,9.3,42,18.3,42,26.2
+                        C38.9,20.6,31,8.9,23.8,0.3C23.8,0.2,23.4,0,23.2,0z M6.4,57.2c-3.1,0-3.7-2-3.7-4.5V12.4c0-3.9,9.3-7.9,18.7-9.9
+                        c0,4.5-0.2,36.5,0,54.7C16.1,57.2,11.7,57.2,6.4,57.2z"/>
+                    </svg>
+
+                </h1>
+                <!-- /logo -->
+
+                <!-- menu-circles -->
+                <div class="menu-circles">
+                    <div class="menu-circles__item"></div>
+                    <div class="menu-circles__item"></div>
+                    <div class="menu-circles__item"></div>
+                </div>
+                <!-- /menu-circles -->
+
+                <!-- site__menu-btn -->
+                <button class="site__menu-btn">
+                    <span></span>
+                </button>
+                <!-- /site__menu-btn -->
+
+                <!-- site__menu -->
+                <div class="site__menu">
+
+                    <!-- site__nav -->
+                    <nav class="site__menu-nav">
+                        <ul>
+                            <li>
+                                <a href="#" class="site__menu-link">Nos Projets
+                                <span>Exclusivement la vente du neuf</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="site__menu-link">Notre Métier
+                                    <span>La vente sur plan</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="site__menu-link">Investisseurs
+                                    <span>Une expertise de 24 ans</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="site__menu-link">Contact
+                                    <span>Entrepôt Royal Tour & taxis</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /site__nav -->
+
+                </div>
+                <!-- /site__menu -->
+
+            </div>
+            <!-- /site__header-layout -->
+
+
+        </header>
+        <!-- /site__header -->
+
+        <!-- main-slider -->
+        <div class="main-slider">
+
+            <!-- main-slider__container -->
+            <div class="main-slider__container">
+                <div class="main-slider__slide" data-dots="De Rotterdam, Silver Appartment" style="background-image: url('pic/slider-main-1.jpg')">
+
+                    <!-- main-slider__items -->
+                    <div class="main-slider__items">
+
+                        <!-- main-slider__title -->
+                        <h2 class="main-slider__title">Building On Trust</h2>
+                        <!-- main-slider__title -->
+
+                        <p>Un partenaire incontournable pour
+                            la vente et l'achat du NEUF</p>
+
+                        <a href="#" class="btn">Découvrez Nos Derniers Projets</a>
+
+                    </div>
+                    <!-- /main-slider__items -->
+
+                </div>
+                <div class="main-slider__slide" data-dots="De Rotterdam, Silver Appartment" style="background-image: url('pic/slider-main-1.jpg')">
+
+                    <!-- main-slider__items -->
+                    <div class="main-slider__items">
+
+                        <!-- main-slider__title -->
+                        <h2 class="main-slider__title">Building On Trust</h2>
+                        <!-- main-slider__title -->
+
+                        <p>Un partenaire incontournable pour
+                            la vente et l'achat du NEUF</p>
+
+                        <a href="#" class="btn">Découvrez Nos Derniers Projets</a>
+
+                    </div>
+                    <!-- /main-slider__items -->
+
+                </div>
+                <div class="main-slider__slide" data-dots="De Rotterdam, Silver Appartment" style="background-image: url('pic/slider-main-1.jpg')">
+
+                    <!-- main-slider__items -->
+                    <div class="main-slider__items">
+
+                        <!-- main-slider__title -->
+                        <h2 class="main-slider__title">Building On Trust</h2>
+                        <!-- main-slider__title -->
+
+                        <p>Un partenaire incontournable pour
+                            la vente et l'achat du NEUF</p>
+
+                        <a href="#" class="btn">Découvrez Nos Derniers Projets</a>
+
+                    </div>
+                    <!-- /main-slider__items -->
+
+                </div>
+                <div class="main-slider__slide" data-dots="De Rotterdam, Silver Appartment" style="background-image: url('pic/slider-main-1.jpg')">
+
+                    <!-- main-slider__items -->
+                    <div class="main-slider__items">
+
+                        <!-- main-slider__title -->
+                        <h2 class="main-slider__title">Building On Trust</h2>
+                        <!-- main-slider__title -->
+
+                        <p>Un partenaire incontournable pour
+                            la vente et l'achat du NEUF</p>
+
+                        <a href="#" class="btn">Découvrez Nos Derniers Projets</a>
+
+                    </div>
+                    <!-- /main-slider__items -->
+
+                </div>
+            </div>
+            <!-- /main-slider__container -->
+
+        </div>
+        <!-- /main-slider -->
+
+        <!-- site__footer -->
+        <footer class="site__footer">
+
+            <!-- site__footer-layout -->
+            <div class="site__footer-layout">
+
+                <!-- site__footer-items -->
+                <div class="site__footer-items">
+
+                    <div>
+                        © 2016 - agent immobilier agréé IPI sous le numéro 100.021. Consulter l'agréation
+                    </div>
+                    <div class="site__footer-crafted">
+                        Website carefully crafted by <a href="#">Ergonomic</a>
+                    </div>
+
+                </div>
+                <!-- /site__footer-items -->
+
+            </div>
+            <!-- /site__footer-layout -->
+
+        </footer>
+        <!-- /site__footer -->
+
+    </div>
+    <!-- /site -->
+
+    <script src="js/vendors/jquery-2.2.1.min.js"></script>
+    <script src="js/vendors/slick.min.js"></script>
+    <script src="js/index.min.js"></script>
+</body>
+</html>

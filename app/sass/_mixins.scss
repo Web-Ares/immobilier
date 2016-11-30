@@ -1,0 +1,63 @@
+//fonts
+@mixin main-font1() {
+  font-family: "Avenir LT Com Light", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin main-font2() {
+  font-family: "Avenir LT Com Roman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin main-font3() {
+  font-family: "Avenir LT Com Heavy", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin main-font4() {
+  font-family: "Suisse BP Int'l Medium", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin main-font5() {
+  font-family: "Suisse BP Int'l Antique", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin main-font6() {
+  font-family: 'Kalam', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin main-font7() {
+  font-family: "Suisse BP Int'l Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin justify() {
+  text-align: justify;
+
+  &:after {
+    display: inline-block;
+    width: 100%;
+    content: '';
+  }
+}
+
+@mixin absoluteCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% );
+}
+@mixin absoluteCenterX() {
+  position: absolute;
+  left: 50%;
+  transform: translateX( -50% );
+}
+@mixin absoluteCenterY() {
+  position: absolute;
+  top: 50%;
+  transform: translateY( -50% );
+}

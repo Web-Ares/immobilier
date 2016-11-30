@@ -1,0 +1,78 @@
+.sold-progress {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: #fff;
+  margin: 0 auto 40px;
+  box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
+
+  > canvas {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+  }
+
+}
+.sold-progress__wrap {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+  color: #000;
+  @include main-font2();
+}
+.sold-progress__percent {
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  color: #df2c2c;
+  @include main-font1();
+}
+.sold-progress_2 {
+  position: absolute;
+  top: -130px;
+  right: 15px;
+  margin: 0;
+}
+
+@media (min-width: $desktop) {
+
+  .sold-progress {
+    //width: 90px;
+    //height: 90px;
+  }
+  .sold-progress_2 {
+    top: -43px;
+    right: 57px;
+  }
+
+}
+@media (min-width: $desktop-wide) {
+
+  .sold-progress {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 56px;
+  }
+  .sold-progress__wrap {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .sold-progress__percent {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .sold-progress_2 {
+    top: -43px;
+    right: 57px;
+  }
+
+}
+

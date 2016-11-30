@@ -1,0 +1,215 @@
+.btn {
+  overflow: hidden;
+  @include inline-flex();
+  @include flex-direction(row);
+  @include align-items(center);
+  @include justify-content(center);
+  border: none;
+  height: 54px;
+  padding: 1px 24px 0;
+  border-radius: 40px;
+  color: #000000;
+  font-size: 16px;
+  line-height: 16px;
+  background: #fff;
+  letter-spacing: 1.5px;
+  @include main-font4();
+  -webkit-transition: border 0.3s ease, color 0.3s ease, width 0.3s ease, padding 0.3s ease;
+  transition: border 0.3s ease, color 0.3s ease, width 0.3s ease, padding 0.3s ease;
+  transform: perspective(1px) translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 0 15px 2px rgba(0,0,0,0.2);
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #df2c2c;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: background 0.3s ease, -webkit-transform 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    border-radius: 40px;
+  }
+  &:active {
+    //background: #464646;
+
+    &:before {
+      background: #000;
+    }
+  }
+  &:hover {
+    color: #fff;
+    //background: #000;
+    //-webkit-transition: background 0s ease 0.3s, color 0.3s ease;
+    //transition: background 0s ease 0.3s, color 0.3s ease;
+
+    &:before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+
+}
+button.btn {
+
+  >span {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+.btn_2 {
+  width: 53px;
+  height: 53px;
+  padding: 0;
+  color: #010101;
+  border: 2px solid #010101;
+  box-shadow: none;
+
+  svg {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transition: fill 0.3s ease, left 0.3s ease;
+    transition: fill 0.3s ease, left 0.3s ease;
+  }
+  span {
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    -webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  &:hover {
+    width: 195px;
+    padding: 0 20px 0 62px;
+    color: #010101;
+
+    &:before {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+    }
+    svg {
+      left: 33px;
+    }
+    span {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+  &:active {
+    color: #fff;
+    border-color: #df2c2c;
+
+    svg {
+      fill: #fff;
+    }
+
+    &:before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      background: #df2c2c;
+    }
+
+  }
+
+}
+.btn_3 {
+  color: #fff;
+  padding: 1px 30px 0 75px;
+  background: #000000;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: fill 0.3s ease, left 0.3s ease;
+    transition: fill 0.3s ease, left 0.3s ease;
+  }
+}
+.btn_4 {
+  color: #fff;
+  background: #000000;
+}
+.btn_5 {
+  min-width: 220px;
+  color: #fff;
+  background: #000000;
+
+  svg {
+    position: relative;
+    top: 48%;
+    right: 41px;
+    width: 10px;
+    height: 10px;
+    fill: #fff;
+    -webkit-transition: fill 0.3s ease, left 0.3s ease;
+    transition: fill 0.3s ease, left 0.3s ease;
+  }
+
+}
+
+@media (min-width: $desktop) {
+
+  .btn {
+    padding: 1px 60px 0;
+    height: 60px;
+    border-radius: 60px;
+  }
+  .btn_2 {
+    width: 53px;
+    height: 53px;
+    padding: 0;
+  }
+  .btn_3 {
+    padding: 1px 50px 0 107px;
+  }
+  .btn_4 {
+    padding: 1px 50px 0;
+  }
+  .btn_5 {
+    min-width: 261px;
+    padding: 1px 40px 0 23px;
+  }
+
+}
+@media (min-width: $desktop-wide) {
+
+  .btn {
+    padding: 1px 60px 0;
+    height: 71px;
+    border-radius: 71px;
+  }
+  .btn_2 {
+    width: 53px;
+    height: 53px;
+    padding: 0;
+  }
+  .btn_3 {
+    padding: 1px 50px 0 107px;
+  }
+  .btn_4 {
+    padding: 1px 50px 0;
+  }
+  .btn_5 {
+    padding: 1px 40px 0 23px;
+  }
+
+}
