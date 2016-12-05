@@ -1,0 +1,76 @@
+.appointment-decorations {
+  padding: 50px 0;
+  background: #f0f0f8;
+  font-size: 16px;
+  line-height: 26px;
+
+  p {
+    margin: 0 0 30px;
+  }
+  strong {
+    @include main-font3();
+  }
+
+}
+.appointment-decorations__layout {
+  max-width: 1530px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.appointment-decorations__small {
+  font-size: 12px;
+  line-height: 22px;
+}
+.appointment-decorations__pic {
+  img  {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media (min-width: $desktop) {
+
+  .appointment-decorations {
+    padding: 115px 0 108px;
+    font-size: 22px;
+    line-height: 36px;
+
+    .site__title {
+      padding: 0 50% 0 0;
+      line-height: 48px;
+      margin: 0 0 26px;
+    }
+
+  }
+  .appointment-decorations__small {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .appointment-decorations__layout {
+    padding: 0 35px;
+
+  }
+  .appointment-decorations__inner {
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+
+    >div {
+      width: 48.5%;
+      padding: 8px 0 0;
+
+      &:first-child {
+        width: 41%;
+        padding: 0;
+      }
+    }
+
+  }
+
+}
+@media (min-width: $desktop-wide) {
+
+}
+

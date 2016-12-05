@@ -15,7 +15,10 @@
   cursor: pointer;
   font-size: 18px;
   border-bottom: 1px solid transparent;
+  -webkit-transition: border 0.3s ease, color 0.3s ease;
+  transition: border 0.3s ease, color 0.3s ease;
 
+  &:hover,
   &.active {
     border-color: #df2c2c;
     color: #df2c2c;

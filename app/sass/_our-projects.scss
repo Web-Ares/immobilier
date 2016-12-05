@@ -75,8 +75,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
 
   &:after {
     opacity: 0;
@@ -95,8 +95,8 @@
 }
 .our-projects__text {
   position: absolute;
-  left: 15px;
-  bottom: 30px;
+  bottom: 15px;
+  top: 30px;
   text-shadow: 0 0 10px rgba(0,0,0,0.3);
 
   span {
@@ -163,8 +163,8 @@
       transform: translate(-50%,-50%) scale(1.1);
     }
     .our-projects__bg {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
+      //-webkit-transform: scale(1.1);
+      //transform: scale(1.1);
 
       &:after {
         opacity: 1;
@@ -253,7 +253,8 @@
   }
   .our-projects__text {
     left: 75px;
-    bottom: 64px;
+    top: 64px;
+    bottom: auto;
 
     span {
       font-size: 24px;

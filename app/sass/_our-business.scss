@@ -1,0 +1,166 @@
+.our-business {
+  position: relative;
+  padding: 130px 0 50px;
+}
+.our-business__layout {
+  position: relative;
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.our-business__type {
+  display: block;
+  position: relative;
+  padding: 50px;
+  margin: 0 auto 50px;
+  max-width: 500px;
+  text-align: center;
+  color: #262626;
+  font-size: 18px;
+  line-height: 28px;
+  background: #ffffff;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+  -webkit-transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  &:after {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid #fff;
+    content: '';
+  }
+
+  &:hover {
+    background: #df2c2c;
+    color: #fff;
+
+    .btn {
+      color: #000;
+
+      &:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+
+      &:hover {
+        color: #fff;
+
+        &:before {
+          background: #bdb8b8;
+        }
+
+      }
+
+    }
+
+
+  }
+
+  >div {
+    position: relative;
+    z-index: 1;
+  }
+  p {
+    overflow: hidden;
+    margin: 0 0 19px;
+  }
+  strong {
+    @include main-font3();
+  }
+
+}
+.our-business__title {
+  margin: 0 0 15px;
+  font-size: 28px;
+  line-height: 36px;
+  @include main-font5();
+}
+
+@media (min-width: $desktop) {
+
+  .our-business {
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    padding: 170px 0 60px;
+    min-height: calc(100vh - 90px);
+
+    .site__title {
+      margin: 0 0 60px;
+    }
+
+  }
+  .our-business__layout {
+    width: 100%;
+    padding: 0 35px;
+    margin: 0;
+  }
+  .our-business__inner {
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items();
+    @include justify-content(space-between);
+
+    .our-business__type {
+      width: 48.3%;
+    }
+
+  }
+  .our-business__type {
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include justify-content(center);
+    max-width: 100%;
+    height: 380px;
+    padding: 50px 60px;
+    margin: 0;
+    font-size: 22px;
+    line-height: 32px;
+
+    &:after {
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      left: 40px;
+    }
+
+    >div {
+      position: relative;
+      z-index: 1;
+    }
+    p {
+      height: 95px;
+    }
+
+  }
+  .our-business__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+}
+
+@media (min-width: $desktop-wide) {
+
+  .our-business {
+    padding: 190px 0 60px;
+
+    .site__title {
+      margin: 0 0 113px;
+    }
+
+  }
+  .our-business__type {
+    height: 473px;
+    padding: 57px 60px 63px;
+  }
+
+}

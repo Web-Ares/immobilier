@@ -59,7 +59,6 @@
 
                     }
                 } );
-
                 _btnDown.on( {
                     click: function () {
 
@@ -142,20 +141,19 @@
 
                 _body[0].obj = _self;
                 _addEvents();
-                _initSlick();
+                _initSlider();
 
             },
-            _initSlick = function() {
+            _initSlider = function() {
 
-                _obj.slick( {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    dots: true,
-                    autoplay: true,
-                    autoplaySpeed: 3000,
-                    dotsClass: 'advantages__gallery-dots'
-                } );
+                var swiper = new Swiper( _obj , {
+                    pagination: _obj.find( '.swiper-pagination' ),
+                    paginationClickable: true,
+                    loop: true,
+                    autoplay: 3000,
+                    speed: 700,
+                    autoplayDisableOnInteraction: false
+                });
 
                 _setDotsWidth();
 
@@ -164,7 +162,7 @@
 
                 var length = _slider.length;
 
-                _obj.find('.advantages__gallery-dots li').css( {
+                _obj.find('.swiper-pagination swiper-pagination-bullet').css( {
                     width: 'calc( '+ 100/length +'% - 40px)'
                 } );
 

@@ -1,0 +1,27 @@
+.discover-projects {
+  padding: 70px 0;
+  text-align: center;
+
+  .btn {
+    min-width: 260px;
+  }
+
+}
+.discover-projects__layout {
+  max-width: 1530px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+@media (min-width: $desktop) {
+
+  .discover-projects {
+    padding: 111px 0;
+  }
+  .discover-projects__layout {
+    padding: 0 35px;
+  }
+
+}
+

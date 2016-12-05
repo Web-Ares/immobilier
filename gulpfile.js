@@ -29,7 +29,8 @@ var paths = {
             contains: [
                 'app/js/jquery.main.js',
                 'app/js/jquery.form.validator.js',
-                'app/js/jquery.call-to-action.js'
+                'app/js/jquery.call-to-action.js',
+                'app/js/jquery.scrolling-elements.js'
             ]
         },
         {
@@ -54,6 +55,42 @@ var paths = {
                 'app/js/jquery.popup.js',
                 'app/js/jquery.call-to-action.js',
                 'app/js/jquery.project-gallery.js'
+            ]
+        },
+        {
+            dist: 'investors.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.form.validator.js',
+                'app/js/jquery.labels.js',
+                'app/js/jquery.call-to-action.js'
+            ]
+        },
+        {
+            dist: 'promoter.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.form.validator.js',
+                'app/js/jquery.call-to-action.js',
+                'app/js/jquery.labels.js',
+                'app/js/jquery.websters-select.js'
+            ]
+        },
+        {
+            dist: 'buyers.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.form.validator.js',
+                'app/js/jquery.call-to-action.js',
+                'app/js/jquery.buyers-gallery.js'
+            ]
+        },
+        {
+            dist: 'our-business.min.js',
+            contains: [
+                'app/js/jquery.main.js',
+                'app/js/jquery.form.validator.js',
+                'app/js/jquery.call-to-action.js'
             ]
         }
     ],

@@ -16,7 +16,7 @@
         var _self = this,
             _obj = obj,
             _fields = _obj.find('.contact-us__fields'),
-            _input = _obj.find('input, textarea');
+            _input = _obj.find('input:not([readonly]), textarea');
 
         var _addEvents = function () {
 

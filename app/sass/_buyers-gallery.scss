@@ -1,0 +1,125 @@
+.buyers-gallery {
+  position: relative;
+  padding: 31px 0;
+  margin: 0 -15px;
+
+  .swiper-container {
+    height: 333px;
+    padding-bottom: 70px;
+
+    .swiper-pagination {
+
+      .swiper-pagination-bullet {
+        vertical-align: middle;
+        width: 6px;
+        height: 6px;
+        background: #dddddd;
+        opacity: 1;
+
+        &.swiper-pagination-bullet-active {
+          width: 8px;
+          height: 8px;
+          background: #df2c2c;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+.buyers-gallery__slide {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.buyers-gallery__pagination {
+  display: none;
+}
+
+@media (min-width: $desktop) {
+
+  .buyers-gallery {
+    padding: 8px 0 27px;
+    margin: 0 -35px;
+
+    .swiper-container {
+      height: 562px;
+      padding-bottom: 62px;
+
+      //.swiper-slide {
+      //  opacity: 0;
+      //  -webkit-transition: opacity 0.3s ease;
+      //  transition: opacity 0.3s ease;
+      //}
+      //.swiper-slide-active {
+      //  opacity: 1;
+      //}
+
+    }
+
+  }
+  .buyers-gallery__pagination {
+    position: relative;
+    z-index: 3;
+    display: block;
+    max-width: 890px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    span {
+      display: block;
+      position: relative;
+      font-size: 18px;
+      line-height: 20px;
+      margin: 0 0 16px;
+      padding: 0 0 0 76px;
+      color: #999999;
+      -webkit-transition: color 0.3s ease;
+      transition: color 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: #df2c2c;
+      }
+
+      &.active {
+        color: #df2c2c;
+
+        &:after {
+          width: 36px;
+        }
+
+      }
+
+      &:after {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #df2c2c;
+        content: '';
+        -webkit-transition: width 0.3s ease;
+        transition: width 0.3s ease;
+      }
+
+    }
+
+  }
+
+}
+
+@media (min-width: $desktop-wide) {
+
+  .buyers-gallery__pagination {
+    position: absolute;
+    left: 122px;
+    top: 46.5%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 300px;
+  }
+
+}

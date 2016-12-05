@@ -19,7 +19,7 @@
   transform: perspective(1px) translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  box-shadow: 0 0 15px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px 2px rgba(0,0,0,0.1);
 
   &:before {
     content: "";
@@ -165,6 +165,26 @@ button.btn {
   }
 
 }
+.btn_6 {
+  color: #fff;
+  background: #000000;
+
+  &:before {
+    background: #fff;
+  }
+  &:active {
+    color: #fff;
+
+    &:before {
+      background: #bdb8b8;
+    }
+
+  }
+  &:hover {
+    color: #000;
+  }
+
+}
 
 @media (min-width: $desktop) {
 
@@ -188,6 +208,9 @@ button.btn {
     min-width: 261px;
     padding: 1px 40px 0 23px;
   }
+  .btn_6 {
+    padding: 1px 50px 0;
+  }
 
 }
 @media (min-width: $desktop-wide) {
@@ -210,6 +233,9 @@ button.btn {
   }
   .btn_5 {
     padding: 1px 40px 0 23px;
+  }
+  .btn_6 {
+    padding: 1px 50px 0;
   }
 
 }

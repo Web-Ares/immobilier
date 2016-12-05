@@ -46,8 +46,38 @@
 
   }
 
-}
+  .swiper-pagination {
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+    position: relative;
+    bottom: auto;
+    left: auto;
+    padding: 20px 0 0 0;
 
+    .swiper-pagination-bullet  {
+      opacity: 1;
+      display: inline-block;
+      vertical-align: top;
+      width: 15%;
+      height: 2px;
+      border-radius: 0;
+      background: #dddddd;
+
+      &.swiper-pagination-bullet-active {
+        background: #df2c2c;
+      }
+
+      button {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
 
 @media (min-width: $desktop) {
 

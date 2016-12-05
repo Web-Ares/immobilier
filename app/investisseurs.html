@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <title>Title</title>
+
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+            background: rgba(0,0,0,1);
+        }
+        .preloader > .logo {
+            position: absolute;
+            left: 50%;
+            top: 40% !important;
+            max-width: 354px;
+            z-index: 3;
+            -webkit-transition: opacity 500ms ease-in-out;
+            transition: opacity 500ms ease-in-out;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .preloader_loaded > .logo,
+        .preloader_loaded > div{
+            opacity: 0;
+        }
+        .preloader__points {
+            overflow: hidden;
+            position: absolute;
+            top: 65%;
+            left: 0;
+            width: 100%;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            text-align: center;
+        }
+
+        .preloader__points span {
+            display: inline-block;
+            vertical-align: top;
+            height: 10px;
+            margin: 60px auto;
+            width: 10px;
+            background: #610717;
+            border-radius: 10px;
+            -webkit-animation: loading 0.6s infinite alternate 0s;
+            animation: loading 0.6s infinite alternate 0s;
+        }
+
+        .preloader__points span:nth-of-type(1) {
+            -webkit-animation-delay: 0s;
+        }
+        .preloader__points span:nth-of-type(2) {
+            -webkit-animation-delay: 0.2s;
+            background: #c40923;
+        }
+        .preloader__points span:nth-of-type(3) {
+            -webkit-animation-delay: 0.4s;
+            background: #a60922;
+        }
+        .preloader__points span:nth-of-type(4) {
+            -webkit-animation-delay: 0.6s;
+            background: #8c091f;
+        }
+        .preloader__points span:nth-of-type(5) {
+            -webkit-animation-delay: 0.8s;
+            background: #610717;
+        }
+
+        @-webkit-keyframes loading {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes loading {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/investors-page.css">
+
+</head>
+<body>
+
+    <!-- site -->
+    <div class="site site_inner">
+
+        <!-- call-action -->
+        <div class="call-action">
+
+            <!-- call-action__question -->
+            <div class="call-action__question">Need help?</div>
+            <!-- /call-action__question -->
+
+            <!-- call-action__pic -->
+            <div class="call-action__pic">
+                <img src="pic/call-to-action.jpg" width="148" height="148" alt="">
+            </div>
+            <!-- /call-action__pic -->
+
+            <!-- call-action__content -->
+            <div class="call-action__content">
+
+                <p>Leave your details and
+                    we’ll reach you.</p>
+
+                <!-- site__form -->
+                <div class="site__form validation-form">
+                    <form action="#">
+
+                        <!-- site__fields -->
+                        <div class="site__fields">
+                            <input type="email" name="email3" id="email3" data-required>
+                            <label for="email3">Email</label>
+                        </div>
+                        <!-- /site__fields -->
+
+                        <!-- site__fields -->
+                        <div class="site__fields">
+                            <input type="tel" name="phone" id="phone" data-required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        <!-- /site__fields -->
+
+                        <button class="btn btn_5 btn-send">
+                            <span>Envoyer</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 97.283 97.283" style="enable-background:new 0 0 97.283 97.283;" xml:space="preserve">
+                                <g>
+                                    <path d="M62.805,83.951l33.894-33.896c0.78-0.781,0.78-2.047,0-2.828L62.805,13.332c-0.781-0.781-2.047-0.781-2.828,0l-9.031,9.03   c-0.375,0.375-0.586,0.883-0.586,1.414c0,0.53,0.211,1.039,0.586,1.414l14.531,14.534H2c-1.104,0-2,0.896-2,2v13.835   c0,1.104,0.896,2,2,2h63.479L50.945,72.091c-0.75,0.75-0.75,2.078,0,2.828l9.031,9.031c0.375,0.375,0.883,0.586,1.414,0.586   C61.92,84.537,62.43,84.326,62.805,83.951z" fill="#FFFFFF"/>
+                                </g>
+                            </svg>
+                        </button>
+
+                    </form>
+                </div>
+                <!-- /site__form__form -->
+
+            </div>
+            <!-- /call-action__content -->
+
+        </div>
+        <!-- /call-action -->
+
+        <!-- preloader -->
+        <div class="preloader">
+            <div class='preloader__points'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo" style="
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjEuMSA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjEuMSA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOm5vbmU7c3Ryb2tlOiNERDAwMkY7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO30uc3Qxe2ZpbGw6I0UwMkQyRDt9PC9zdHlsZT48bGluZSBpZD0iWE1MSURfMjNfIiBjbGFzcz0ic3QwIiB4MT0iMzAuNiIgeTE9IjMwIiB4Mj0iMzAuNiIgeTI9IjMwIi8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTIzLjIsMEMxNC41LDEuNSwwLDYsMCwxMnY0Mi4zYzAsMy4xLDEuNyw1LjQsNS43LDUuNGgxOC4yYy0wLjEtOC45LDAuMS0xNy4zLDAtMjYuMWM2LjUsNy42LDEyLjMsMTcuNSwxOC4zLDI2LjRoOS4zYzEwLjgsMCw5LjYtNyw5LjYtN2MwLTEzLjUsMC0yNy4zLDAtNDAuOGMwLTYtMTEtMTAuNy0xOS4xLTExLjRDNDIsOS4zLDQyLDE4LjMsNDIsMjYuMkMzOC45LDIwLjYsMzEsOC45LDIzLjgsMC4zQzIzLjgsMC4yLDIzLjQsMCwyMy4yLDB6IE02LjQsNTcuMmMtMy4xLDAtMy43LTItMy43LTQuNVYxMi40YzAtMy45LDkuMy03LjksMTguNy05LjljMCw0LjUtMC4yLDM2LjUsMCw1NC43QzE2LjEsNTcuMiwxMS43LDU3LjIsNi40LDU3LjJ6Ii8+PC9zdmc+);
+            "></div>
+        </div>
+        <!-- /preloader -->
+
+        <!-- site__header -->
+        <header class="site__header">
+
+            <!-- site__header-layout -->
+            <div class="site__header-layout">
+
+                <!-- logo -->
+                <a href="#" class="logo">
+
+                    <svg version="1.1" class="logo__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 61.1 60" style="enable-background:new 0 0 61.1 60;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;}
+                    </style>
+                    <line stroke="#DD002F" class="st0" x1="30.6" y1="30" x2="30.6" y2="30"/>
+                    <path class="st1" fill="#E02D2D" d="M23.2,0C14.5,1.5,0,6,0,12v42.3c0,3.1,1.7,5.4,5.7,5.4h18.2c-0.1-8.9,0.1-17.3,0-26.1
+                        c6.5,7.6,12.3,17.5,18.3,26.4h9.3c10.8,0,9.6-7,9.6-7c0-13.5,0-27.3,0-40.8c0-6-11-10.7-19.1-11.4C42,9.3,42,18.3,42,26.2
+                        C38.9,20.6,31,8.9,23.8,0.3C23.8,0.2,23.4,0,23.2,0z M6.4,57.2c-3.1,0-3.7-2-3.7-4.5V12.4c0-3.9,9.3-7.9,18.7-9.9
+                        c0,4.5-0.2,36.5,0,54.7C16.1,57.2,11.7,57.2,6.4,57.2z"/>
+                    </svg>
+
+                    <svg version="1.1" class="logo__svg-mob" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 61.1 60" style="enable-background:new 0 0 61.1 60;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;}
+                    </style>
+                    <line stroke="#DD002F" class="st0" x1="30.6" y1="30" x2="30.6" y2="30"/>
+                    <path class="st1" fill="#E02D2D" d="M23.2,0C14.5,1.5,0,6,0,12v42.3c0,3.1,1.7,5.4,5.7,5.4h18.2c-0.1-8.9,0.1-17.3,0-26.1
+                        c6.5,7.6,12.3,17.5,18.3,26.4h9.3c10.8,0,9.6-7,9.6-7c0-13.5,0-27.3,0-40.8c0-6-11-10.7-19.1-11.4C42,9.3,42,18.3,42,26.2
+                        C38.9,20.6,31,8.9,23.8,0.3C23.8,0.2,23.4,0,23.2,0z M6.4,57.2c-3.1,0-3.7-2-3.7-4.5V12.4c0-3.9,9.3-7.9,18.7-9.9
+                        c0,4.5-0.2,36.5,0,54.7C16.1,57.2,11.7,57.2,6.4,57.2z"/>
+                    </svg>
+
+                </a>
+                <!-- /logo -->
+
+                <!-- site__menu-btn -->
+                <button class="site__menu-btn">
+                    <span></span>
+                </button>
+                <!-- /site__menu-btn -->
+
+                <!-- site__menu -->
+                <div class="site__menu site__menu_dark">
+
+                    <!-- site__nav -->
+                    <nav class="site__menu-nav">
+                        <ul>
+                            <li>
+                                <a href="#" class="site__menu-link">Nos Projets
+                                    <span>Exclusivement la vente du neuf</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="site__menu-link">Notre Métier
+                                    <span>La vente sur plan</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="site__menu-link">Investisseurs
+                                    <span>Une expertise de 24 ans</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="site__menu-link">Contact
+                                    <span>Entrepôt Royal Tour & taxis</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /site__nav -->
+
+                </div>
+                <!-- /site__menu -->
+
+            </div>
+            <!-- /site__header-layout -->
+
+
+        </header>
+        <!-- /site__header -->
+
+        <!-- site__content -->
+        <div class="site__content site__content_bg">
+
+            <!-- site__content-inner -->
+            <div class="site__content-inner">
+
+                <!-- site__title -->
+                <h1 class="site__title">Investisseurs
+                    <span class="site__title-sub">Une expertise de 24 ans</span>
+                </h1>
+                <!-- /site__title -->
+
+                <!-- content -->
+                <div class="content">
+
+                    <h2>Analyse Comparative</h2>
+                    <p>La détermination du loyer réel se fera sur base d'une analyse comparative du marché locatif. Non seulement nous avons accès à plusieurs  bases de données totalisant plusieurs milliers de biens  en location, mises à jour continuellement; mais, en plus,   nous sommes assistés par  l'expérience des plus grandes société de relocation, chargées de l'installation des expats en Belgique. Ceci nous permet d'observer une neutralite totale: notre estimation ne tiendra jamais compte d'un loyer surestimé.</p>
+
+                    <figure class="alignnone">
+                        <img src="pic/content-pic2.jpg" width="860" height="360" alt="">
+                        <figcaption>Un <strong>rendement garanti</strong> déterminé par un loyer reel; et, un calcul financier objectif.</figcaption>
+                    </figure>
+
+
+                    <!-- content__small -->
+                    <div class="content__small">
+                        <p>L'analyse financière du rendement locatif réel  par les experts "invest" de Immobilier Neuf est une approche strictement scientifique, basée sur le modèle des Professeurs Djihed et Charles ,  la référence dans l’analyse financière de l’immobilier résidentiel en Belgique. </p>
+                        <p>Cette analyse objective nous permettra de vous communiquer, au moment de votre demande,  un rendement locatif réel. Loin de toute plus-value fantaisiste.</p>
+                    </div>
+                    <!-- /content__small -->
+
+                    <hr>
+
+                    <p>Afin de garantir, sur le terrain, le rendement garanti, nous proposons tantôt une forme contractuelle du "rendement garanti";  tantôt, nous SELECTIONNONS, en fonction du projet,   les  partenaires qui vous offriront les meilleurs services au niveau de la recherche du « parfait » locataire; et, de la parfaite gestion locative de votre bien.</p>
+
+                    <img class="alignnone" src="pic/content-pic1.jpg" width="860" height="360" alt="">
+
+                    <!-- content__small -->
+                    <div class="content__small">
+                        <p>A ce titre, l’avocat Djihed a récemment attiré l’attention sur le fait que si un particulier opte  pour la mise en location de ses biens dans  une « formule tout compris », il pourra être assimilé, au niveau de l’administration fiscale, à un professionnel; et, en conséquence être lourdement taxé.</p>
+                    </div>
+                    <!-- /content__small -->
+
+                </div>
+                <!-- /content -->
+
+            </div>
+            <!-- /site__content-inner -->
+
+            <!-- contact-us -->
+            <div class="contact-us">
+
+                <!-- contact-us__layout -->
+                <div class="contact-us__layout">
+
+                    <!-- contact-us__inner -->
+                    <div class="contact-us__inner">
+
+                        <h2 class="site__title site__title_2">Contactez notre
+                            expert "Invest"</h2>
+
+                        <!-- site__form -->
+                        <div class="site__form validation-form">
+                            <form action="#">
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="text" name="name" id="name" data-required>
+                                    <label for="name">Nom</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="text" name="first-name" id="first-name">
+                                    <label for="first-name">Prenom</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="email" name="email" id="email" data-required>
+                                    <label for="email">Email</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="tel" name="tel" id="tel" data-required>
+                                    <label for="tel">Téléphone</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="text" name="project" id="project" data-required>
+                                    <label for="project">Nom du projet</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="text" name="property-type" id="property-type" data-required>
+                                    <label for="property-type">Type du bien</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="text" name="selling-price" id="selling-price" data-required>
+                                    <label for="selling-price">Prix de vente</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="text" name="expected-rent" id="expected-rent" data-required>
+                                    <label for="expected-rent">Loyer espéré</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__fields -->
+                                <div class="site__fields">
+                                    <input type="text" name="agent" id="agent" data-required>
+                                    <label for="agent">Agent</label>
+                                </div>
+                                <!-- /site__fields -->
+
+                                <!-- site__send -->
+                                <div class="site__send">
+                                    <button class="btn btn_5 btn-send"><span>Envoyer</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 97.283 97.283" style="enable-background:new 0 0 97.283 97.283;" xml:space="preserve">
+                                    <g>
+                                        <path d="M62.805,83.951l33.894-33.896c0.78-0.781,0.78-2.047,0-2.828L62.805,13.332c-0.781-0.781-2.047-0.781-2.828,0l-9.031,9.03   c-0.375,0.375-0.586,0.883-0.586,1.414c0,0.53,0.211,1.039,0.586,1.414l14.531,14.534H2c-1.104,0-2,0.896-2,2v13.835   c0,1.104,0.896,2,2,2h63.479L50.945,72.091c-0.75,0.75-0.75,2.078,0,2.828l9.031,9.031c0.375,0.375,0.883,0.586,1.414,0.586   C61.92,84.537,62.43,84.326,62.805,83.951z" fill="#FFFFFF"/>
+                                    </g>
+                                    </svg>
+                                    </button>
+                                </div>
+                                <!-- /site__send -->
+
+                            </form>
+                        </div>
+                        <!-- /site__form -->
+
+                    </div>
+                    <!-- /contact-us__inner -->
+
+                </div>
+                <!-- /contact-us__layout -->
+
+                <!-- contact-us__info -->
+                <div class="contact-us__info">
+                    <div>
+
+                        <span class="contact-us__title">IMMOBILIER NEUFTOUR & TAXIS</span>
+
+                        <!-- contact-us__location -->
+                        <div class="contact-us__location">
+                            <span>Entrepôt Royalav. du Port 86c, bte 106</span>
+                            <span>1000 Bruxelles</span>
+                        </div>
+                        <!-- /contact-us__location -->
+
+                        <a class="contact-us__main-phone" href="mailto:info@immobilierneuf.be">info@immobilierneuf.be</a>
+
+                        <!--contact-us__phones -->
+                        <div class="contact-us__phones">
+                            <div>
+                                <span>Tél:</span>
+                                <a href="tel:+32024230000">+ 32(0)2 423 00 00</a>
+                            </div>
+                            <div>
+                                <span>Fax:</span>
+                                <a href="tel:+32024202727">+ 32(0)2 420 27 27</a>
+                            </div>
+                            <div>
+                                <span>GSM:</span>
+                                <a href="tel:+320496569696">+32(0)496 56 96 96</a>
+                            </div>
+                        </div>
+                        <!-- /contact-us__phones -->
+
+                        <!-- contact-us__work -->
+                        <div class="contact-us__work-time">
+                            <h3>Nos heures d'ouverture</h3>
+                            De <strong>9h30</strong> à <strong>13h30</strong> etde <strong>14h00</strong> à <strong>18h00</strong>
+                            <span>Samedi sur rendez-vous</span>
+                        </div>
+                        <!-- /contact-us__work -->
+
+                    </div>
+                </div>
+                <!-- /contact-us__info -->
+
+            </div>
+            <!-- /contact-us -->
+
+        </div>
+        <!-- /site__content -->
+
+        <!-- site__footer -->
+        <footer class="site__footer">
+
+            <!-- site__footer-layout -->
+            <div class="site__footer-layout">
+
+                <!-- site__footer-items -->
+                <div class="site__footer-items">
+
+                    <div>
+                        © 2016 - agent immobilier agréé IPI sous le numéro 100.021. Consulter l'agréation
+                    </div>
+                    <div class="site__footer-crafted">
+                        Website carefully crafted by <a href="#">Ergonomic</a>
+                    </div>
+
+                </div>
+                <!-- /site__footer-items -->
+
+            </div>
+            <!-- /site__footer-layout -->
+
+        </footer>
+        <!-- /site__footer -->
+
+    </div>
+    <!-- /site -->
+
+    <!-- popup -->
+    <div class="popup">
+
+        <!-- popup__wrap -->
+        <div class="popup__wrap">
+
+            <!-- popup__content -->
+            <div class="popup__content popup__call">
+
+                <!-- call-popup -->
+                <div class="call-popup">
+
+                    <h2 class="site__title site__title_3">Call to action title</h2>
+                    <p>KitchenDraw is a new Kitchen and bathroom design software with a buit-in catalog editor.
+                        Download it and get 20 hours of use free, then 3 euros per hour.</p>
+
+                    <!-- site__form -->
+                    <div class="site__form validation-form">
+                        <form action="#">
+
+                            <!-- site__fields -->
+                            <div class="site__fields">
+                                <input type="email" name="email2" id="email2" data-required>
+                                <label for="email2">Email</label>
+                            </div>
+                            <!-- /site__fields -->
+
+                            <button class="btn btn_5 btn-send">
+                                <span>Envoyer</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 97.283 97.283" style="enable-background:new 0 0 97.283 97.283;" xml:space="preserve">
+                                <g>
+                                    <path d="M62.805,83.951l33.894-33.896c0.78-0.781,0.78-2.047,0-2.828L62.805,13.332c-0.781-0.781-2.047-0.781-2.828,0l-9.031,9.03   c-0.375,0.375-0.586,0.883-0.586,1.414c0,0.53,0.211,1.039,0.586,1.414l14.531,14.534H2c-1.104,0-2,0.896-2,2v13.835   c0,1.104,0.896,2,2,2h63.479L50.945,72.091c-0.75,0.75-0.75,2.078,0,2.828l9.031,9.031c0.375,0.375,0.883,0.586,1.414,0.586   C61.92,84.537,62.43,84.326,62.805,83.951z" fill="#FFFFFF"/>
+                                </g>
+                            </svg>
+                            </button>
+
+                        </form>
+                    </div>
+                    <!-- /site__form__form -->
+
+                </div>
+                <!-- /call-popup -->
+
+            </div>
+            <!-- /popup__content -->
+
+            <!-- popup__content -->
+            <div class="popup__content popup__success">
+
+                <a href="#" class="popup__close"></a>
+
+                <!-- alert-messages -->
+                <div class="alert-messages">
+
+                    <h2 class="site__title site__title_4">Congratulations</h2>
+                    <p>Down here goes some fancy text that describes this action message!</p>
+
+                </div>
+                <!-- /alert-messages -->
+
+            </div>
+            <!-- /popup__content -->
+
+            <!-- popup__content -->
+            <div class="popup__content popup__error">
+
+                <a href="#" class="popup__close"></a>
+
+                <!-- alert-messages -->
+                <div class="alert-messages alert-messages_error">
+
+                    <h2 class="site__title site__title_4">Something went wrong!</h2>
+                    <p>Down here goes some sad text that describes this error message.</p>
+
+                </div>
+                <!-- /alert-messages -->
+
+            </div>
+            <!-- /popup__content -->
+
+            <!-- popup__content -->
+            <div class="popup__content popup__info">
+
+                <a href="#" class="popup__close"></a>
+
+                <!-- alert-messages -->
+                <div class="alert-messages alert-messages_info">
+
+                    <h2 class="site__title site__title_4">Info Message</h2>
+                    <p>Down here goes some fancy text that describes this info message!</p>
+
+                </div>
+                <!-- /alert-messages -->
+
+            </div>
+            <!-- /popup__content -->
+
+        </div>
+        <!-- /popup__wrap -->
+
+    </div>
+    <!-- /popup -->
+
+    <script src="js/vendors/jquery-2.2.1.min.js"></script>
+    <script src="js/investors.min.js"></script>
+</body>
+</html>

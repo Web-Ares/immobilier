@@ -4,16 +4,15 @@
   padding: 0 0 60px;
   background: #f0f0f8;
 
-  .slick-list {
-    padding: 0 !important;
-  }
-  .slick-arrow {
+  .swiper-button-next,
+  .swiper-button-prev {
     position: absolute;
     z-index: 3;
     top: 50%;
     left: 5px;
     width: 40px;
     height: 40px;
+    margin: 0;
     background: transparent;
     text-indent: -9999px;
     border: none;
@@ -47,7 +46,7 @@
 
     }
   }
-  .slick-next {
+  .swiper-button-next {
     left: auto;
     right: 5px;
     -webkit-transform: translateY(-50%) rotate(180deg);
@@ -81,12 +80,13 @@
   .project-gallery {
     padding: 0;
 
-    .slick-arrow {
+    .swiper-button-next,
+    .swiper-button-prev {
       left: 65px;
       width: 60px;
       height: 60px;
     }
-    .slick-next {
+    .swiper-button-next {
       left: auto;
       right: 65px;
     }
@@ -141,7 +141,7 @@
         transition: opacity 0.3s ease;
       }
 
-      &.slick-current {
+      &.swiper-slide-active {
 
         &:before,
         &:after {

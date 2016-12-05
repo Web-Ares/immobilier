@@ -13,15 +13,46 @@
 .partners__inner {
 }
 .partners__items {
-  margin: 0 auto 60px;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 auto 40px;
   max-width: 260px;
   text-align: center;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #df2c2c;
+    content: '';
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: width 0.3s ease;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+
+    &:after {
+      width: 20%;
+    }
+
+    .partners__name {
+      color: #df2c2c;
+    }
+
+  }
+
 }
 .partners__name {
   margin: 0 0 30px;
   font-size: 24px;
   line-height: 28px;
   @include main-font4();
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 .partners__logo {
 

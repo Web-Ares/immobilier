@@ -1,0 +1,153 @@
+.websters-select {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+  width: 95px;
+  height: 30px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 20px;
+  color: #df2c2c;
+  @include main-font2();
+  margin-top: 4px;
+
+  &_opened {
+    background: #fff;
+
+    .websters-select__arrow {
+
+      &:after {
+        transform: rotate(180deg);
+      }
+
+    }
+
+  }
+  &__arrow{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 25px;
+    transform-origin: center;
+
+    &:after{
+      position: absolute;
+      top: 13px;
+      right: 2px;
+      border: 4px solid transparent;
+      border-top: 5px solid #cccccc;
+      content: '';
+      -webkit-transition: -webkit-transform 200ms ease-in-out;
+      transition: transform 200ms ease-in-out;
+      -webkit-transform-origin: 50% 25%;
+      transform-origin: 50% 25%;
+    }
+  }
+  &__item {
+    overflow: hidden;
+    @include absoluteCenterY();
+    right: 0;
+    left: 0;
+    padding: 4px 22px 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+  &_mobile {
+
+    select {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: -1px;
+      left: 1px;
+      width: 100%;
+    }
+
+  }
+  &_custom {
+
+    select {
+      position: absolute;
+      left: -100000px;
+    }
+
+  }
+  &__popup {
+    overflow: hidden;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 27px;
+    width: 100%;
+    box-sizing: border-box;
+    //border: 1px solid $websters-select-border-active;
+    border-top: none;
+    background: $websters-select-popup-back;
+    text-align: center;
+
+    ul {
+      z-index: 1;
+    }
+
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 6px 10px;
+
+      &:hover {
+        color: $websters-select-popup-item-active-color;
+        background: $websters-select-popup-item-active-back;
+      }
+
+      &.active {
+        color: $websters-select-popup-item-active-color !important;
+        background: $websters-select-popup-item-active-back !important;
+      }
+
+    }
+
+  }
+
+}
+
+@media (min-width: $desktop-wide) {
+
+  .websters-select {
+    height: 40px;
+    font-size: 30px;
+    line-height: 30px;
+
+    //&__item {
+    //  right: 44px;
+    //  left: 16px;
+    //}
+    &__arrow {
+
+      &:after {
+        top: 16px;
+      }
+    }
+    //
+    //}
+    //&__popup {
+    //  left: -2px;
+    //  top: 55px;
+    //  width: calc( 100% + 4px);
+    //  border-width: 2px;
+    //
+    //  li {
+    //    padding: 16px 21px;
+    //  }
+    //
+    //}
+
+  }
+
+}
