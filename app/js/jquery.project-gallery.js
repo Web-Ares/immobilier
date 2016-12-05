@@ -50,13 +50,23 @@
 
                 var galleryTop = new Swiper( _bigGallery, {
                     nextButton: _bigGallery.find( '.swiper-button-next' ),
-                    prevButton: _bigGallery.find( '.swiper-button-prev' )
+                    prevButton: _bigGallery.find( '.swiper-button-prev' ),
+                    onInit: function( swiper ) {
+
+                        swiper.slideTo( 2, 0, true);
+
+                    }
                 } );
                 var galleryThumbs = new Swiper( _thumbs, {
                     centeredSlides: true,
                     slidesPerView: 5,
                     touchRatio: 0.2,
-                    slideToClickedSlide: true
+                    slideToClickedSlide: true,
+                    onInit: function( swiper ) {
+
+                        swiper.slideTo( 2, 0, true);
+
+                    }
                 } );
                 galleryTop.params.control = galleryThumbs;
                 galleryThumbs.params.control = galleryTop;

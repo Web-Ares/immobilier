@@ -20,8 +20,8 @@
   line-height: 28px;
   background: #ffffff;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
-  -webkit-transition: background 0.3s ease, color 0.3s ease;
-  transition: background 0.3s ease, color 0.3s ease;
+  -webkit-transition: background 0.5s ease, color 0.5s ease;
+  transition: background 0.5s ease, color 0.5s ease;
 
   &:after {
     position: absolute;
@@ -32,9 +32,23 @@
     border: 2px solid #fff;
     content: '';
   }
+  &:before {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #df2c2c;
+    content: '';
+    -webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
 
   &:hover {
-    background: #df2c2c;
+    //background: #df2c2c;
     color: #fff;
 
     .btn {
@@ -46,16 +60,21 @@
       }
 
       &:hover {
-        color: #fff;
+        color: #000;
 
         &:before {
-          background: #bdb8b8;
+          background: #fff;
         }
 
       }
 
     }
-
+    &:before {
+      opacity:1;
+      width: 100%;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
 
   }
 

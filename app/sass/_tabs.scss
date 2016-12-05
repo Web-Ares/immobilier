@@ -68,6 +68,10 @@
 
 @media (min-width: $desktop) {
   .tabs dl {
+    padding-right: 60%;
+  }
+  .tabs__content {
+    padding-right: 60%;
   }
   .tabs dl dt {
     display: inline-block;
@@ -94,6 +98,9 @@
 }
 @media (min-width: $desktop-wide) {
 
+  .tabs dl {
+    padding-right: 0;
+  }
   .tabs__content {
     padding-right: 60%;
   }

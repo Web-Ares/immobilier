@@ -18,20 +18,30 @@
     height: 0;
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     opacity: 0;
-    -webkit-animation: pulse 6s linear infinite;
-    animation: pulse 6s linear infinite;
+  }
+}
+.site__loaded {
 
-    @for $i from 2 through 20 {
+  .menu-circles {
 
-      &:nth-child( #{$i} ) {
-        animation-delay: 2s * ($i - 1);
+    .menu-circles__item {
+      -webkit-animation: pulse 5s linear 2 5s;
+      animation: pulse 5s linear 2 5s;
+
+      @for $i from 2 through 20 {
+
+        &:nth-child( #{$i} ) {
+          animation-delay: 1.666s * ($i - 1) + 5s;
+        }
+
       }
 
     }
-
   }
+
 }
 
 @-webkit-keyframes pulse {

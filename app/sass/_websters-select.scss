@@ -100,6 +100,8 @@
       overflow: hidden;
       cursor: pointer;
       padding: 6px 10px;
+      -webkit-transition: background 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
 
       &:hover {
         color: $websters-select-popup-item-active-color;
@@ -117,6 +119,9 @@
 
 }
 
+@media (min-width: $desktop) {
+
+}
 @media (min-width: $desktop-wide) {
 
   .websters-select {
@@ -124,29 +129,16 @@
     font-size: 30px;
     line-height: 30px;
 
-    //&__item {
-    //  right: 44px;
-    //  left: 16px;
-    //}
     &__arrow {
 
       &:after {
         top: 16px;
       }
     }
-    //
-    //}
-    //&__popup {
-    //  left: -2px;
-    //  top: 55px;
-    //  width: calc( 100% + 4px);
-    //  border-width: 2px;
-    //
-    //  li {
-    //    padding: 16px 21px;
-    //  }
-    //
-    //}
+
+    &__popup {
+      top: 37px;
+    }
 
   }
 

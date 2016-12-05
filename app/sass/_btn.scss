@@ -173,10 +173,10 @@ button.btn {
     background: #fff;
   }
   &:active {
-    color: #fff;
+    color: #000;
 
     &:before {
-      background: #bdb8b8;
+      background: #fff;
     }
 
   }
