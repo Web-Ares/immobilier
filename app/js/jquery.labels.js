@@ -66,6 +66,13 @@
             _init = function() {
                 _obj[0].obj = _self;
                 _addEvents();
+
+                _input.each( function() {
+
+                    _checkOnEmpty( $(this) );
+
+                } );
+
             };
 
         _init();

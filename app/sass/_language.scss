@@ -1,0 +1,100 @@
+.language {
+  position: absolute;
+  z-index: 5;
+  top: 20px;
+  left: 105px;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 16px;
+  @include main-font4();
+
+  a {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 17px;
+    margin-left: 13px;
+    color: #000000;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+
+    &:before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      content: '';
+    }
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #999999;
+      content: '/';
+    }
+    &:first-child {
+      padding-left: 0;
+      margin-left: 0;
+
+      &:after {
+        display: none;
+      }
+
+    }
+    &.active {
+      color: #df2c2c;
+      cursor: default;
+    }
+    &:hover {
+      color: #df2c2c;
+    }
+
+  }
+
+  &_light {
+
+    a {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      padding-left: 17px;
+      margin-left: 13px;
+      color: #999999;
+
+      &.active {
+        color: #fff;
+      }
+      &:hover {
+        color: #fff;
+      }
+
+    }
+
+  }
+
+}
+
+@media (min-width: $desktop) {
+
+  .language {
+    left: 35px;
+    font-size: 12px;
+    line-height: 12px;
+
+    a {
+
+      &:before {
+        width: 30px;
+        height: 30px;
+      }
+
+    }
+
+  }
+
+}
+
+

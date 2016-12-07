@@ -109,6 +109,18 @@ html {
       }
 
     }
+    .site__menu-link {
+      color: #fff;
+
+      &.active,
+      &:hover {
+        background: #702630;
+      }
+      &.active {
+        cursor: default;
+      }
+
+    }
     .logo {
 
       .logo__svg {
@@ -122,6 +134,21 @@ html {
     .logo_2 {
       width: 47px;
       height: 46px;
+    }
+    .language {
+
+      a {
+        color: #000000;
+
+        &.active {
+          color: #df2c2c;
+        }
+        &:hover {
+          color: #df2c2c;
+        }
+
+      }
+
     }
 
   }
@@ -586,12 +613,13 @@ html {
         height: 120px;
       }
       .site__menu-nav {
-        padding: 38px 90px 0 268px;
+        padding-top: 38px;
+        //padding: 38px 90px 0 268px;
         height: 120px;
       }
       .logo {
-        width: 71px;
-        height: 70px;
+        width: 51px;
+        height: 50px;
 
         >span {
           display: none;
@@ -622,10 +650,11 @@ html {
       .site__menu-link {
         font-size: 18px;
         line-height: 22px;
-        //color: #999999 !important;
+        color: #000 !important;
         text-transform: none;
         //@include main-font2();
         letter-spacing: 0;
+        text-shadow: none;
 
         &:hover {
           color: #000;
@@ -633,6 +662,14 @@ html {
 
       }
 
+    }
+    &.site__header_hidden {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    &.site__header_hide {
+      //-webkit-transform: translateY(0);
+      //transform: translateY(0);
     }
 
   }
@@ -842,6 +879,10 @@ html {
       }
       .site__menu-nav {
         padding: 74px 310px 0;
+      }
+      .logo {
+        width: 71px;
+        height: 70px;
       }
 
     }
