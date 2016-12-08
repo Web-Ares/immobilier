@@ -34,6 +34,16 @@
   font-weight: 400;
   font-style: normal;
 }
+@mixin main-font8() {
+  font-family: 'Gentium Basic', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin main-font9() {
+  font-family: 'Gentium Basic', serif;
+  font-weight: 400;
+  font-style: italic;
+}
 
 @mixin justify() {
   text-align: justify;

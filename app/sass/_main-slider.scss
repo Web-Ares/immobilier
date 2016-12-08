@@ -92,7 +92,7 @@
     margin: 0 0 44px;
     font-size: 18px;
     line-height: 26px;
-    @include main-font6();
+    @include main-font9();
     text-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
 
@@ -155,7 +155,6 @@
   max-width: 600px;
   text-align: center;
 }
-
 
 @media (min-width: $desktop) {
 
